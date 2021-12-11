@@ -34,16 +34,15 @@ function arrayMap() {
         arr.push(i);
 
     }
+    console.log(arr)
 
-    return arr;
-
+    return arr.map(function(item, index, array){
+        return item * 3;
+    })
+ 
 }
 
 
-const result = arrayMap();
+console.log(arrayMap());
 
 
-const newArray = result.map(function (item, index, array) {
-    return item * 3;
-});
-console.log(result); console.log(newArray);
