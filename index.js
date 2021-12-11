@@ -8,13 +8,16 @@ function askUser() {
     for (let i = 0; ; i++) {
 
 
-        answer = prompt('Enter your value');
+        answer = prompt(`Введите ваше значение:\n(Для остановки этой функции и запуска следующей введите "exit" и нажмите "ok")`);
 
         if (answer === null || answer === "") {
             popped = arrOne.pop();
 
-        }else {
+        } else {
             arrOne.push(answer);
+        }
+        if (answer === 'exit') {
+            break;
         }
         console.log(arrOne);
 
@@ -24,22 +27,23 @@ function askUser() {
 }
 askUser();
 
-// function arrayMap () {
-//     const arr = [];
+function arrayMap() {
+    const arr = [];
 
-//     for (let i=1; i <=100; i++){
-//     arr.push(i);
+    for (let i = 1; i <= 100; i++) {
+        arr.push(i);
 
-//     }
+    }
 
-//     return arr.mep(function(item) {
-//         return item * 3;
+    return arr;
 
-//     });
-
-
-// }
-
-// console.log(arrayMap());
+}
 
 
+const result = arrayMap();
+
+
+const newArray = result.map(function (item, index, array) {
+    return item * 3;
+});
+console.log(result); console.log(newArray);
